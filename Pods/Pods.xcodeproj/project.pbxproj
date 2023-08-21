@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E617FCD28D290F1316351B6F7075131 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2AB2207E4FF07125B4DDC0F99399AD08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2AB775AA117F26D9BB42BD4A3E5EF0AC /* Pods-swipe-swipeUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CB75C93FCE8CD305E3652C05822EABFC /* Pods-swipe-swipeUITests-dummy.m */; };
+		45DF9E409B1DF63CE77706CBD638C0DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		7F46C48FFE922F1E54A9134456CDAC8C /* Pods-swipe-swipeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DB8591E8CD9C78BCDF3D8CC420107B1 /* Pods-swipe-swipeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		956667DFBF0AF3E6BDEBFB907F0CA62A /* Pods-swipeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFC54161FB7DB128441EC63B9B7C4BB /* Pods-swipeTests-dummy.m */; };
+		AA54DEF4542C08CC8B3CD7A8692A6AD0 /* Pods-swipeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A4A284D0C3464BC5D06396430A67B5C /* Pods-swipeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D56F728899EB9EC660818A20314EB0E0 /* Pods-swipe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 453A0CDC35BE5CEFAC1DE30661989410 /* Pods-swipe-dummy.m */; };
+		F0059A55EB4CF9D5684691162D554E62 /* Pods-swipe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D91E4C2EA4860F7298656ABD4477C4 /* Pods-swipe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1043DFC0A868CC06BA91AB37624D3EFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AEDFADE5F35E018A0B2B962ABFD297F;
+			remoteInfo = "Pods-swipe";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01D91E4C2EA4860F7298656ABD4477C4 /* Pods-swipe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swipe-umbrella.h"; sourceTree = "<group>"; };
+		04ED73CFC0FC6500162F160B33FEEF70 /* Pods-swipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swipe.debug.xcconfig"; sourceTree = "<group>"; };
+		0DAFC844D500E6D4F2B81D39F9AFE151 /* Pods-swipe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swipe-Info.plist"; sourceTree = "<group>"; };
+		29F17940614D1342BF5DBC1A28B2BB4A /* Pods-swipeTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-swipeTests"; path = Pods_swipeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3192B4805BBD0E299EC1AE6B93A708 /* Pods-swipe-swipeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swipe-swipeUITests.modulemap"; sourceTree = "<group>"; };
+		330AF404EF72CD790895822BE69DBDD3 /* Pods-swipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swipeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3928E09FBCD290EF8F91B5D31B4D0D3C /* Pods-swipe-swipeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swipe-swipeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		39BED7AF359EFCDEF5705A968642F308 /* Pods-swipeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swipeTests.release.xcconfig"; sourceTree = "<group>"; };
+		416BBB15E5ACA5F5CEAA30114637A330 /* Pods-swipeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swipeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		427F14FB9F7C2008B604F599195D657E /* Pods-swipeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swipeTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		453A0CDC35BE5CEFAC1DE30661989410 /* Pods-swipe-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swipe-dummy.m"; sourceTree = "<group>"; };
+		4A4A284D0C3464BC5D06396430A67B5C /* Pods-swipeTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swipeTests-umbrella.h"; sourceTree = "<group>"; };
+		6D8256B5EF86BCB219E2950D0E7AC746 /* Pods-swipeTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swipeTests-Info.plist"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7AEF04BB9D938CA6AE1D8FEBD00826FF /* Pods-swipe-swipeUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swipe-swipeUITests-Info.plist"; sourceTree = "<group>"; };
+		866331B475E8AF9503F09FAE4C9086BA /* Pods-swipeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swipeTests.modulemap"; sourceTree = "<group>"; };
+		8DB8591E8CD9C78BCDF3D8CC420107B1 /* Pods-swipe-swipeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swipe-swipeUITests-umbrella.h"; sourceTree = "<group>"; };
+		96614F6A3F555C2ECD094DAD70527AE3 /* Pods-swipe */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-swipe"; path = Pods_swipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AA9841E14032AD97D1D9AC645CDF423D /* Pods-swipe-swipeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swipe-swipeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA85C1468C8BF0DF1ED18F81F9FD71BD /* Pods-swipe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swipe.modulemap"; sourceTree = "<group>"; };
+		BDFC54161FB7DB128441EC63B9B7C4BB /* Pods-swipeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swipeTests-dummy.m"; sourceTree = "<group>"; };
+		CB75C93FCE8CD305E3652C05822EABFC /* Pods-swipe-swipeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swipe-swipeUITests-dummy.m"; sourceTree = "<group>"; };
+		D15C3C8E97E0EDB48CF4F3B349C028A8 /* Pods-swipe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swipe-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D3C88320C64D798AA607F05628D22BE7 /* Pods-swipe-swipeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swipe-swipeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E5783EFA8C8C7BAF4E59FC211AC22817 /* Pods-swipe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swipe-acknowledgements.plist"; sourceTree = "<group>"; };
+		F32ABE17BEF6FFE8D701E57F5703CE72 /* Pods-swipe-swipeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swipe-swipeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F35680331DA0889CAEEBB2AAA5220427 /* Pods-swipe-swipeUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-swipe-swipeUITests"; path = Pods_swipe_swipeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F781E2C5D2E8459749C44DFA73DEED3F /* Pods-swipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swipe.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A5F606D55415518FD751F0CA191D622 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45DF9E409B1DF63CE77706CBD638C0DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EA6925A04310D2E95EBC6314802D6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E617FCD28D290F1316351B6F7075131 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F26CDBB86CE1665833C8519A574FB4EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB2207E4FF07125B4DDC0F99399AD08 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26EF0C1D77DE129E66EC4CA1CFC1725C /* Pods-swipe */ = {
+			isa = PBXGroup;
+			children = (
+				BA85C1468C8BF0DF1ED18F81F9FD71BD /* Pods-swipe.modulemap */,
+				D15C3C8E97E0EDB48CF4F3B349C028A8 /* Pods-swipe-acknowledgements.markdown */,
+				E5783EFA8C8C7BAF4E59FC211AC22817 /* Pods-swipe-acknowledgements.plist */,
+				453A0CDC35BE5CEFAC1DE30661989410 /* Pods-swipe-dummy.m */,
+				0DAFC844D500E6D4F2B81D39F9AFE151 /* Pods-swipe-Info.plist */,
+				01D91E4C2EA4860F7298656ABD4477C4 /* Pods-swipe-umbrella.h */,
+				04ED73CFC0FC6500162F160B33FEEF70 /* Pods-swipe.debug.xcconfig */,
+				F781E2C5D2E8459749C44DFA73DEED3F /* Pods-swipe.release.xcconfig */,
+			);
+			name = "Pods-swipe";
+			path = "Target Support Files/Pods-swipe";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6654BA7C7974CCB6E013C02904E5FD73 /* Pods-swipeTests */ = {
+			isa = PBXGroup;
+			children = (
+				866331B475E8AF9503F09FAE4C9086BA /* Pods-swipeTests.modulemap */,
+				416BBB15E5ACA5F5CEAA30114637A330 /* Pods-swipeTests-acknowledgements.markdown */,
+				427F14FB9F7C2008B604F599195D657E /* Pods-swipeTests-acknowledgements.plist */,
+				BDFC54161FB7DB128441EC63B9B7C4BB /* Pods-swipeTests-dummy.m */,
+				6D8256B5EF86BCB219E2950D0E7AC746 /* Pods-swipeTests-Info.plist */,
+				4A4A284D0C3464BC5D06396430A67B5C /* Pods-swipeTests-umbrella.h */,
+				330AF404EF72CD790895822BE69DBDD3 /* Pods-swipeTests.debug.xcconfig */,
+				39BED7AF359EFCDEF5705A968642F308 /* Pods-swipeTests.release.xcconfig */,
+			);
+			name = "Pods-swipeTests";
+			path = "Target Support Files/Pods-swipeTests";
+			sourceTree = "<group>";
+		};
+		9FC8BB4F49BDBB1886E2869EA8DB5610 /* Pods-swipe-swipeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2D3192B4805BBD0E299EC1AE6B93A708 /* Pods-swipe-swipeUITests.modulemap */,
+				AA9841E14032AD97D1D9AC645CDF423D /* Pods-swipe-swipeUITests-acknowledgements.markdown */,
+				F32ABE17BEF6FFE8D701E57F5703CE72 /* Pods-swipe-swipeUITests-acknowledgements.plist */,
+				CB75C93FCE8CD305E3652C05822EABFC /* Pods-swipe-swipeUITests-dummy.m */,
+				7AEF04BB9D938CA6AE1D8FEBD00826FF /* Pods-swipe-swipeUITests-Info.plist */,
+				8DB8591E8CD9C78BCDF3D8CC420107B1 /* Pods-swipe-swipeUITests-umbrella.h */,
+				3928E09FBCD290EF8F91B5D31B4D0D3C /* Pods-swipe-swipeUITests.debug.xcconfig */,
+				D3C88320C64D798AA607F05628D22BE7 /* Pods-swipe-swipeUITests.release.xcconfig */,
+			);
+			name = "Pods-swipe-swipeUITests";
+			path = "Target Support Files/Pods-swipe-swipeUITests";
+			sourceTree = "<group>";
+		};
+		AE0DE9A234953A76ADE4C66801A303C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96614F6A3F555C2ECD094DAD70527AE3 /* Pods-swipe */,
+				F35680331DA0889CAEEBB2AAA5220427 /* Pods-swipe-swipeUITests */,
+				29F17940614D1342BF5DBC1A28B2BB4A /* Pods-swipeTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD238A9869812512715852D24E131ACE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				26EF0C1D77DE129E66EC4CA1CFC1725C /* Pods-swipe */,
+				9FC8BB4F49BDBB1886E2869EA8DB5610 /* Pods-swipe-swipeUITests */,
+				6654BA7C7974CCB6E013C02904E5FD73 /* Pods-swipeTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				AE0DE9A234953A76ADE4C66801A303C2 /* Products */,
+				BD238A9869812512715852D24E131ACE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1716F61D68ED559B4794B5775B7F6076 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0059A55EB4CF9D5684691162D554E62 /* Pods-swipe-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FBE9E8BE7FC085BA6EDBF9780CB0081 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA54DEF4542C08CC8B3CD7A8692A6AD0 /* Pods-swipeTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AC536E268AF05B114FFC9FD85E5123B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F46C48FFE922F1E54A9134456CDAC8C /* Pods-swipe-swipeUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1E3257D67A3AE716B140F2201ED5F509 /* Pods-swipe-swipeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF23154CDBBFF9BC0E27BB41C2CBAB0A /* Build configuration list for PBXNativeTarget "Pods-swipe-swipeUITests" */;
+			buildPhases = (
+				7AC536E268AF05B114FFC9FD85E5123B /* Headers */,
+				BAE5F4E847DF1016C7E3C1420F36F68A /* Sources */,
+				3A5F606D55415518FD751F0CA191D622 /* Frameworks */,
+				72798E4E086887C3F974A4DAE0CF5E29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-swipe-swipeUITests";
+			productName = Pods_swipe_swipeUITests;
+			productReference = F35680331DA0889CAEEBB2AAA5220427 /* Pods-swipe-swipeUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		5AEDFADE5F35E018A0B2B962ABFD297F /* Pods-swipe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDE53B22A06EA4737B8DEF571AD03FD /* Build configuration list for PBXNativeTarget "Pods-swipe" */;
+			buildPhases = (
+				1716F61D68ED559B4794B5775B7F6076 /* Headers */,
+				4D0CF86D55BA490AB4C4879C417B01D4 /* Sources */,
+				F0EA6925A04310D2E95EBC6314802D6F /* Frameworks */,
+				70B3A368F24FBDAC53C1852058EA6BB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-swipe";
+			productName = Pods_swipe;
+			productReference = 96614F6A3F555C2ECD094DAD70527AE3 /* Pods-swipe */;
+			productType = "com.apple.product-type.framework";
+		};
+		CCD0C34DCECFBDE5E7544993A8B6C3EF /* Pods-swipeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6AA7D6B6CBBDEDFE28D01774C0BAF34 /* Build configuration list for PBXNativeTarget "Pods-swipeTests" */;
+			buildPhases = (
+				1FBE9E8BE7FC085BA6EDBF9780CB0081 /* Headers */,
+				FFDFF8096128874597A8754347A8FCD6 /* Sources */,
+				F26CDBB86CE1665833C8519A574FB4EB /* Frameworks */,
+				63EBA956469FC7C7638F44FE3D5C7EE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1E9F5104FBD83D1F1865B712BB39C2E /* PBXTargetDependency */,
+			);
+			name = "Pods-swipeTests";
+			productName = Pods_swipeTests;
+			productReference = 29F17940614D1342BF5DBC1A28B2BB4A /* Pods-swipeTests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = AE0DE9A234953A76ADE4C66801A303C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AEDFADE5F35E018A0B2B962ABFD297F /* Pods-swipe */,
+				1E3257D67A3AE716B140F2201ED5F509 /* Pods-swipe-swipeUITests */,
+				CCD0C34DCECFBDE5E7544993A8B6C3EF /* Pods-swipeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63EBA956469FC7C7638F44FE3D5C7EE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B3A368F24FBDAC53C1852058EA6BB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72798E4E086887C3F974A4DAE0CF5E29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D0CF86D55BA490AB4C4879C417B01D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56F728899EB9EC660818A20314EB0E0 /* Pods-swipe-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE5F4E847DF1016C7E3C1420F36F68A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB775AA117F26D9BB42BD4A3E5EF0AC /* Pods-swipe-swipeUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDFF8096128874597A8754347A8FCD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				956667DFBF0AF3E6BDEBFB907F0CA62A /* Pods-swipeTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C1E9F5104FBD83D1F1865B712BB39C2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-swipe";
+			target = 5AEDFADE5F35E018A0B2B962ABFD297F /* Pods-swipe */;
+			targetProxy = 1043DFC0A868CC06BA91AB37624D3EFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		41C0D90DCB92DCD12CDED47255721B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F781E2C5D2E8459749C44DFA73DEED3F /* Pods-swipe.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swipe/Pods-swipe-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swipe/Pods-swipe.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		756B5B85296CCF1D9C6DB04855967027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3928E09FBCD290EF8F91B5D31B4D0D3C /* Pods-swipe-swipeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swipe-swipeUITests/Pods-swipe-swipeUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swipe-swipeUITests/Pods-swipe-swipeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7C3FBC45C4966EFE20583918767EFBE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		91361B931A5B97F99262E4DF3F9D17D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39BED7AF359EFCDEF5705A968642F308 /* Pods-swipeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swipeTests/Pods-swipeTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swipeTests/Pods-swipeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B792728D6A931CD0652BB79178169EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 330AF404EF72CD790895822BE69DBDD3 /* Pods-swipeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swipeTests/Pods-swipeTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swipeTests/Pods-swipeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E56373FCE54FF1A12C858B8E6E5F5E15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04ED73CFC0FC6500162F160B33FEEF70 /* Pods-swipe.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swipe/Pods-swipe-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swipe/Pods-swipe.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F71039795EC69A892A589ECF959DB96E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3C88320C64D798AA607F05628D22BE7 /* Pods-swipe-swipeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swipe-swipeUITests/Pods-swipe-swipeUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swipe-swipeUITests/Pods-swipe-swipeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FF0A36149038A192FFD678E1D4A40D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C3FBC45C4966EFE20583918767EFBE2 /* Debug */,
+				FF0A36149038A192FFD678E1D4A40D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6AA7D6B6CBBDEDFE28D01774C0BAF34 /* Build configuration list for PBXNativeTarget "Pods-swipeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B792728D6A931CD0652BB79178169EE4 /* Debug */,
+				91361B931A5B97F99262E4DF3F9D17D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDE53B22A06EA4737B8DEF571AD03FD /* Build configuration list for PBXNativeTarget "Pods-swipe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E56373FCE54FF1A12C858B8E6E5F5E15 /* Debug */,
+				41C0D90DCB92DCD12CDED47255721B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF23154CDBBFF9BC0E27BB41C2CBAB0A /* Build configuration list for PBXNativeTarget "Pods-swipe-swipeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				756B5B85296CCF1D9C6DB04855967027 /* Debug */,
+				F71039795EC69A892A589ECF959DB96E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
