@@ -108,6 +108,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300C43462A939A4C00B058CC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3072098C2A8E382300965B08 /* ViewController.swift */,
+				30474F332A8F47EB00C1D9C2 /* AddProductViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		300C43472A939A7700B058CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				307209BD2A8E4DA600965B08 /* ProductListModel.swift */,
+				30C9A2832A9372060069927F /* Media.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		300C43482A939AB200B058CC /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				307209BF2A8E593E00965B08 /* ProductListViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		30481B5F2A8FEA10002FED87 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,16 +172,14 @@
 			children = (
 				307209882A8E382300965B08 /* AppDelegate.swift */,
 				3072098A2A8E382300965B08 /* SceneDelegate.swift */,
-				3072098C2A8E382300965B08 /* ViewController.swift */,
-				30474F332A8F47EB00C1D9C2 /* AddProductViewController.swift */,
-				307209BD2A8E4DA600965B08 /* ProductListModel.swift */,
-				307209BF2A8E593E00965B08 /* ProductListViewCell.swift */,
+				300C43462A939A4C00B058CC /* View Controllers */,
+				300C43472A939A7700B058CC /* Models */,
+				300C43482A939AB200B058CC /* TableViewCells */,
 				30481B5F2A8FEA10002FED87 /* Extensions */,
 				3072098E2A8E382300965B08 /* Main.storyboard */,
 				307209912A8E382500965B08 /* Assets.xcassets */,
 				307209932A8E382500965B08 /* LaunchScreen.storyboard */,
 				307209962A8E382500965B08 /* Info.plist */,
-				30C9A2832A9372060069927F /* Media.swift */,
 			);
 			path = swipe;
 			sourceTree = "<group>";

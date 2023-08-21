@@ -120,7 +120,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.productNameLabel.text = self.products[indexPath.section].product_name
             cell.productTypeLabel.text = self.products[indexPath.section].product_type
             cell.priceLabel.text = "₹\(self.products[indexPath.section].price)"
-            cell.taxesLabel.text = "Applicable \(self.products[indexPath.section].tax) % extra taxes"
+            cell.taxesLabel.text = "Price excludes \(self.products[indexPath.section].tax)% taxes "
             let image = self.products[indexPath.section].image
             if image == "" {
                 cell.productImageView.image = UIImage(named: "Swipe_logo")
