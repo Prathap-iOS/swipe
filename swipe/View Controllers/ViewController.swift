@@ -99,39 +99,56 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    //TableView - DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductListViewCell
-        if isSearching {
-            cell.productNameLabel.text = self.searchProducts[indexPath.section].product_name
-            cell.productTypeLabel.text = self.searchProducts[indexPath.section].product_type
-            cell.priceLabel.text = "₹\(self.searchProducts[indexPath.section].price)"
-            cell.taxesLabel.text = "Applicable \(self.searchProducts[indexPath.section].tax) % extra taxes"
-            let image = self.searchProducts[indexPath.section].image
-            if image == "" {
-                cell.productImageView.image = UIImage(named: "Swipe_logo")
+        if self.products.count != 0 {
+            cell.hideSkeleton()
+            if isSearching {
+                cell.productNameLabel.text = self.searchProducts[indexPath.section].product_name
+                cell.productTypeLabel.text = self.searchProducts[indexPath.section].product_type
+                cell.priceLabel.text = "₹\(self.searchProducts[indexPath.section].price)"
+                cell.taxesLabel.text = "Applicable \(self.searchProducts[indexPath.section].tax) % extra taxes"
+                let image = self.searchProducts[indexPath.section].image
+                if image == "" {
+                    cell.productImageView.image = UIImage(named: "Swipe_logo")
+                } else {
+                    cell.productImageView.load(url: URL(string: image)!)
+                }
             } else {
-                cell.productImageView.load(url: URL(string: image)!)
-            }
-        } else {
-            cell.productNameLabel.text = self.products[indexPath.section].product_name
-            cell.productTypeLabel.text = self.products[indexPath.section].product_type
-            cell.priceLabel.text = "₹\(self.products[indexPath.section].price)"
-            cell.taxesLabel.text = "Price excludes \(self.products[indexPath.section].tax)% taxes "
-            let image = self.products[indexPath.section].image
-            if image == "" {
-                cell.productImageView.image = UIImage(named: "Swipe_logo")
-            } else {
-                cell.productImageView.load(url: URL(string: image)!)
+                cell.productNameLabel.text = self.products[indexPath.section].product_name
+                cell.productTypeLabel.text = self.products[indexPath.section].product_type
+                cell.priceLabel.text = "₹\(self.products[indexPath.section].price)"
+                cell.taxesLabel.text = "Price excludes \(self.products[indexPath.section].tax)% taxes "
+                let image = self.products[indexPath.section].image
+                if image == "" {
+                    cell.productImageView.image = UIImage(named: "Swipe_logo")
+                } else {
+                    cell.productImageView.load(url: URL(string: image)!)
+                }
             }
         }
         productTypeList.append(self.products[indexPath.section].product_type)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.imageString = self.products[indexPath.section].image
+        vc.productName = self.products[indexPath.section].product_name
+        vc.productType = self.products[indexPath.section].product_type
+        vc.price = self.products[indexPath.section].price
+        vc.tax = self.products[indexPath.section].tax
+        vc.isSource = "pcell"
+        present(vc, animated: true)
+    }
+    
+    //TableView - Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }

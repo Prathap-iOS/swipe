@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-swipe/Pods-swipe-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
+${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework

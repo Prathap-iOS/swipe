@@ -23,6 +23,15 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var placeHolderImageView: UIImageView!
     @IBOutlet weak var addProductImageLabel: UILabel!
     
+    let child = SpinnerViewController()
+    
+    var isSource: String?
+    var productName: String?
+    var productType: String?
+    var price: Float = 0.0
+    var tax: Float = 0.0
+    var imageString = ""
+    
     let url = URL(string: "https://app.getswipe.in/api/public/add")
     
     let boundary: String = "Boundary-\(UUID().uuidString)"
@@ -30,13 +39,39 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     var productTypeList: [String] = []
     
+    var filePath: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.productImageView.isHidden = true
-        self.photoSelectionView.isHidden = true
-        self.productTypeTableView.isHidden = true
         self.productTypeList.removeDuplicates()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isSource == "pcell" {
+            self.productImageView.isHidden = false
+            self.photoSelectionView.isHidden = true
+            self.productTypeTableView.isHidden = true
+            self.addProductImageLabel.isHidden = true
+            self.placeHolderImageView.isHidden = true
+            if self.imageString == "" {
+                self.productImageView.image = UIImage(named: "Swipe_logo")
+            } else {
+                self.productImageView.load(url: URL(string: self.imageString)!)
+            }
+            self.productNameTF.text = self.productName
+            self.productTypeTF.text = self.productType
+            self.sellingPriceTF.text = "\(self.price)"
+            self.taxRateTF.text = "\(self.tax)"
+        } else {
+            self.productImageView.isHidden = true
+            self.photoSelectionView.isHidden = true
+            self.productTypeTableView.isHidden = true
+            self.addProductImageLabel.isHidden = false
+            self.placeHolderImageView.isHidden = false
+        }
+        
     }
     
     @IBAction func addProductImageViewTap(_ sender: Any) {
@@ -49,74 +84,114 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    func postRequest() async {
-        let parameters = ["product_name" : self.productNameTF.text!,
-                          "product_type" : self.productTypeTF.text!,
-                          "price" : "\(self.sellingPriceTF.text!)",
-                          "tax" : "\(self.taxRateTF.text!)"]
+    func showSpinnerView() {
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
+    
+    func hideSpinnerView() {
+        // then remove the spinner view controller
+        child.willMove(toParent: nil)
+        child.view.removeFromSuperview()
+        child.removeFromParent()
+    }
+    
+    func uploadProduct() async {
+        showSpinnerView()
+        let urlString = "https://app.getswipe.in/api/public/add"
         
-        guard let mediaImage = Media(withImage: self.productImage, forKey: "files[]") else { return }
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
         
-        guard let url = URL(string: "https://app.getswipe.in/api/public/add") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        let boundary = generateBoundary()
+        let boundary = "Boundary-\(UUID().uuidString)"
+        let contentType = "multipart/form-data; boundary=\(boundary)"
+        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        
-        let dataBody = createDataBody(withParameters: parameters, media: [mediaImage], boundary: boundary)
-        request.httpBody = dataBody
-        
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
-            
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                    DispatchQueue.main.async {
-                        NotificationCenter.default.post(name: Notification.Name("message"), object: "Product added Successfully!")
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                } catch {
-                    print(error)
-                }
-            }
-        }.resume()
-    }
-    
-    func createDataBody(withParameters params: Parameters?, media: [Media]?, boundary: String) -> Data {
-        let lineBreak = "\r\n"
         var body = Data()
         
-        if let parameters = params {
-            for(key, value) in parameters {
-                body.append("--\(boundary + lineBreak)")
-                body.append("Content-Disposition: form-data; name=\"\(key)\"\(lineBreak + lineBreak)")
-                body.append("\(value + lineBreak)")
+        // Adding files
+        let filePath = self.filePath ?? ""
+        if let fileData = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
+           let fileName = filePath.components(separatedBy: "/").last {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"files[]\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
+            body.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+            body.append(fileData)
+            body.append("\r\n".data(using: .utf8)!)
+        }
+        
+        // Adding other form data
+        let formData = [
+            "product_name": self.productNameTF.text,
+            "product_type": self.productTypeTF.text,
+            "price": "\(self.sellingPriceTF.text ?? "")",
+            "tax": "\(self.taxRateTF.text ?? "")"
+        ]
+        for (key, value) in formData {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!)
+            body.append("\(value ?? "")\r\n".data(using: .utf8)!)
+        }
+        
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        request.httpBody = body
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error)")
+                return
             }
             
-            if let media = media {
-                for photo in media {
-                    body.append("--\(boundary + lineBreak)")
-                    body.append("Content-Disposition: form-data; name=\"\(photo.key)\"; fileName=\"\(photo.fileName)\"\(lineBreak)")
-                    body.append("Content-Type: \(photo.mimeType + lineBreak + lineBreak)")
-                    body.append(photo.data)
-                    body.append(lineBreak)
+            if let data = data,
+               let responseString = String(data: data, encoding: .utf8) {
+                print("Response: \(responseString)")
+                DispatchQueue.main.async {
+                    self.hideSpinnerView()
+                    self.dismiss(animated: true) {
+                        self.view.showToast(toastMessage: "Product added Successfully!", duration: 2.0)
+                    }
                 }
             }
-            
-            body.append("--\(boundary)--\(lineBreak)")
         }
-        return body
+        
+        task.resume()
     }
     
-    func generateBoundary() -> String {
-        return "Boundary-\(UUID().uuidString)"
+    func saveImageToFile(image: UIImage) -> String? {
+        // Get the document directory URL
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        
+        // Create a unique file name
+        let fileName = "\(UUID().uuidString).png"
+        
+        // Append the file name to the documents directory URL to create the full file URL
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        
+        // Convert the image to PNG data
+        guard let imageData = image.pngData() else {
+            return nil
+        }
+        
+        // Write the image data to the file
+        do {
+            try imageData.write(to: fileURL)
+            return fileURL.path
+        } catch {
+            print("Error saving image to file: \(error)")
+            return nil
+        }
     }
     
     @IBAction func onCancelButtonTap(_ sender: Any) {
@@ -133,7 +208,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
         } else if taxRateTF.text == "" {
             showAlert(message: "Tax rate shouldn't be empty")
         } else {
-            await self.postRequest()
+            await self.uploadProduct()
         }
     }
     
@@ -172,6 +247,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
             self.productImageView.isHidden = false
             self.productImageView.image = image
             self.productImage = image
+            self.filePath = self.saveImageToFile(image: image)
         }
     }
     
@@ -182,96 +258,7 @@ class AddProductViewController: UIViewController, UIImagePickerControllerDelegat
             self.productTypeTableView.isHidden = true
         }
     }
-    
-//    func multiPartRequest(fileName: String, fileData: Data) async {
-//        var multipart = MultipartRequest()
-//        for field in [
-//            "product_name": self.productNameTF.text,
-//            "product_type": self.productTypeTF.text,
-//            "price" : self.sellingPriceTF.text,
-//            "tax" : self.taxRateTF.text,
-//        ] {
-//            multipart.add(key: field.key, value: field.value!)
-//        }
-//
-//        multipart.add(
-//            key: "file",
-//            file: fileName,
-//            fileMimeType: "image/png",
-//            fileData: fileData
-//        )
-//
-//        /// Create a regular HTTP URL request & use multipart components
-//        var request = URLRequest(url: self.url!)
-//        request.httpMethod = "POST"
-//        request.setValue(multipart.httpContentTypeHeadeValue, forHTTPHeaderField: "Content-Type")
-//        request.httpBody = multipart.httpBody
-//
-//        /// Fire the request using URL sesson or anything else...
-//        let (data, response) = try! await URLSession.shared.data(for: request)
-//        print((response as! HTTPURLResponse).statusCode)
-//        print(String(data: data, encoding: .utf8)!)
-//        valicationsTF(statusCode: (response as! HTTPURLResponse).statusCode)
-//    }
 }
-
-//public struct MultipartRequest {
-//
-//    public let boundary: String
-//
-//    private let separator: String = "\r\n"
-//    private var data: Data
-//
-//    public init(boundary: String = UUID().uuidString) {
-//        self.boundary = boundary
-//        self.data = .init()
-//    }
-//
-//    private mutating func appendBoundarySeparator() {
-//        data.append("--\(boundary)\(separator)")
-//    }
-//
-//    private mutating func appendSeparator() {
-//        data.append(separator)
-//    }
-//
-//    private func disposition(_ key: String) -> String {
-//        "Content-Disposition: form-data; name=\"\(key)\""
-//    }
-//
-//    public mutating func add(
-//        key: String,
-//        value: String
-//    ) {
-//        appendBoundarySeparator()
-//        data.append(disposition(key) + separator)
-//        appendSeparator()
-//        data.append(value + separator)
-//    }
-//
-//    public mutating func add(
-//        key: String,
-//        file: String,
-//        fileMimeType: String,
-//        fileData: Data
-//    ) {
-//        appendBoundarySeparator()
-//        data.append(disposition(key) + "; file=\"\(file)\"" + separator)
-//        data.append("Content-Type: \(fileMimeType)" + separator + separator)
-//        data.append(fileData)
-//        appendSeparator()
-//    }
-//
-//    public var httpContentTypeHeadeValue: String {
-//        "multipart/form-data; boundary=\(boundary)"
-//    }
-//
-//    public var httpBody: Data {
-//        var bodyData = data
-//        bodyData.append("--\(boundary)--")
-//        return bodyData
-//    }
-//}
 
 extension AddProductViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

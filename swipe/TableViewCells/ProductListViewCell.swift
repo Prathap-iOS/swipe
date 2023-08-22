@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class ProductListViewCell: UITableViewCell {
 
@@ -21,11 +22,21 @@ class ProductListViewCell: UITableViewCell {
         self.selectionStyle = .none
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.masksToBounds = true
+        
+        productImageView.showAnimatedSkeleton()
+        [productNameLabel, productTypeLabel, priceLabel, taxesLabel].forEach
+        { $0?.showAnimatedSkeleton() }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func hideAnimation() {
+        productImageView.hideSkeleton()
+        [productNameLabel, productTypeLabel, priceLabel, taxesLabel].forEach
+        { $0?.hideSkeleton() }
     }
 }
