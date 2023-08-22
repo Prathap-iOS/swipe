@@ -139,11 +139,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
         vc.modalPresentationStyle = .fullScreen
-        vc.imageString = self.products[indexPath.section].image
-        vc.productName = self.products[indexPath.section].product_name
-        vc.productType = self.products[indexPath.section].product_type
-        vc.price = self.products[indexPath.section].price
-        vc.tax = self.products[indexPath.section].tax
+        if isSearching == true {
+            vc.imageString = self.searchProducts[indexPath.section].image
+            vc.productName = self.searchProducts[indexPath.section].product_name
+            vc.productType = self.searchProducts[indexPath.section].product_type
+            vc.price = self.searchProducts[indexPath.section].price
+            vc.tax = self.searchProducts[indexPath.section].tax
+        } else {
+            vc.imageString = self.products[indexPath.section].image
+            vc.productName = self.products[indexPath.section].product_name
+            vc.productType = self.products[indexPath.section].product_type
+            vc.price = self.products[indexPath.section].price
+            vc.tax = self.products[indexPath.section].tax
+        }
+        
         vc.isSource = "pcell"
         present(vc, animated: true)
     }
