@@ -659,6 +659,9 @@
 				DEVELOPMENT_TEAM = Y28627RSMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = swipe/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "The app will be accessing your Media photos for updates. it's completely private and secure. ";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app will be accessing your camera in order to capture images for updates. it's completely private and secure. ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app will be accessing your photos in order to post image update etc. it's completely private and secure. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -688,6 +691,9 @@
 				DEVELOPMENT_TEAM = Y28627RSMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = swipe/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "The app will be accessing your Media photos for updates. it's completely private and secure. ";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app will be accessing your camera in order to capture images for updates. it's completely private and secure. ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The app will be accessing your photos in order to post image update etc. it's completely private and secure. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
